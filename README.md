@@ -41,8 +41,8 @@ The simulation accurately models the evolution of temperature in both 1D and 2D 
     <td align="center"><strong>1D Spatio-Temporal Evolution</strong></td>
   </tr>
   <tr>
-    <td><img src="results/result_1d_heatmap.png" width="400"></td>
-    <td><img src="results/result_1d.png" width="400"></td>
+    <td><img src="results/result_1d_heatmap.png" width="500"></td>
+    <td><img src="results/result_1d.png" width="500"></td>
   </tr>
   <tr>
     <td align="center"><em>The final temperature profile along the 1D rod.</em></td>
@@ -52,7 +52,7 @@ The simulation accurately models the evolution of temperature in both 1D and 2D 
     <td colspan="2" align="center"><strong>2D Final State (Heatmap at t=2.0s)</strong></td>
   </tr>
   <tr>
-    <td colspan="2" align="center"><img src="results/result_2D.png" width="400"></td>
+    <td colspan="2" align="center"><img src="results/result_2D.png" width="600"></td>
   </tr>
   <tr>
     <td colspan="2" align="center"><em>The 2D heatmap shows a central hot spot, consistent with the physical model.</em></td>
