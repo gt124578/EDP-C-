@@ -94,6 +94,20 @@ The application is built on a modular, object-oriented design with a clear separ
 
 ### Project Structure
 
+UML Diagram:
+
+<table>
+  <tr>
+    <td colspan="2" align="center"><strong>UML Diagram</strong></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center"><img src="results/diagramme_UML.png" width="400"></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center"><em>Simplified UML class diagram of the simulation.</em></td>
+  </tr>
+</table>
+
 The repository follows this structure:
 
 ```
