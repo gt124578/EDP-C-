@@ -59,24 +59,6 @@ The simulation accurately models the evolution of temperature in both 1D and 2D 
   </tr>
 </table>
 
-### Numerical Convergence Analysis
-
-To validate the implementation, we analyzed the L2 error of the numerical solution compared to the exact solution. The results confirm that the error decreases as the spatial (`dx`) and temporal (`dt`) steps are refined, which is the expected behavior for a convergent numerical scheme.
-
-<table>
-  <tr>
-    <td align="center"><strong>L2 Error vs. Spatial Step (dx)</strong></td>
-    <td align="center"><strong>L2 Error vs. Time Step (dt)</strong></td>
-  </tr>
-  <tr>
-    <td><img src="results/1d_error_vs_dx.png" width="400"></td>
-    <td><img src="results/1d_error_vs_dt.png" width="400"></td>
-  </tr>
-  <tr>
-    <td align="center"><em>Evolution of the L2 error for different `dx` values, showing improved accuracy with finer grids.</em></td>
-    <td align="center"><em>Evolution of the L2 error for different `dt` values, confirming the stability of the scheme.</em></td>
-  </tr>
-</table>
 
 ---
 
