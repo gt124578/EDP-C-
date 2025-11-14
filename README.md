@@ -29,26 +29,54 @@ The equations are solved numerically using the **Finite Difference Method** with
 
 ## Results & Visualizations
 
-The C++ application handles the intensive computation, while visualization is delegated to **Gnuplot** through the `gnuplot-iostream` library.
+The C++ application is dedicated to high-performance computation. Visualization is decoupled and handled by **Gnuplot**, with communication managed via the `gnuplot-iostream` library.
 
-| 1D Final State (t=2.0s)                               | 1D Spatio-Temporal Evolution                        |
-| ----------------------------------------------------- | --------------------------------------------------- |
-| !<1D Solution>(results/result_1d_heatmap.png)         | !<1D Evolution>(results/result_1d.png)              |
-| **2D Final State (Heatmap at t=2.0s)**                |                                                     |
-| !<2D Heatmap>(results/result_2D.png)                  |                                                     |
+### Core Simulation Outputs
 
----
+The simulation accurately models the evolution of temperature in both 1D and 2D domains, respecting the Dirichlet boundary conditions. The final results are consistent with the analytical solution `u(x,t) = sin(πx)(1+t)`.
 
-## Performance Comparison: Python vs. C++
+<table>
+  <tr>
+    <td align="center"><strong>1D Final State (t=2.0s)</strong></td>
+    <td align="center"><strong>1D Spatio-Temporal Evolution</strong></td>
+  </tr>
+  <tr>
+    <td><img src="results/figure2_solution_1d.png" width="400"></td>
+    <td><img src="results/figure3_evolution_1d.png" width="400"></td>
+  </tr>
+  <tr>
+    <td align="center"><em>The final temperature profile along the 1D rod.</em></td>
+    <td align="center"><em>The complete time history of the 1D simulation.</em></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center"><strong>2D Final State (Heatmap at t=2.0s)</strong></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center"><img src="results/figure4_heatmap_2d.png" width="400"></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center"><em>The 2D heatmap shows a central hot spot, consistent with the physical model.</em></td>
+  </tr>
+</table>
 
-Porting the code yielded a massive performance improvement, validating the choice of C++ for computationally intensive tasks. The static typing, compiled nature, and fine-grained memory control of C++ drastically reduce overhead compared to the interpreted Python version.
+### Numerical Convergence Analysis
 
-| Criterion                  | Python (+NumPy)                    | **C++ (This Project)**                        |
-| -------------------------- | ---------------------------------- | --------------------------------------------- |
-| **Execution Time (2D, 50x50)** | **~10-15 seconds**                 | **< 0.1 seconds**                             |
-| Memory Management          | Automatic (Garbage Collector)      | Manual (RAII / Stack / Heap)                  |
-| Typing                     | Dynamic                            | Static                                        |
-| Extensibility              | High (Scripting)                   | Very High (via OOP)                           |
+To validate the implementation, we analyzed the L2 error of the numerical solution compared to the exact solution. The results confirm that the error decreases as the spatial (`dx`) and temporal (`dt`) steps are refined, which is the expected behavior for a convergent numerical scheme.
+
+<table>
+  <tr>
+    <td align="center"><strong>L2 Error vs. Spatial Step (dx)</strong></td>
+    <td align="center"><strong>L2 Error vs. Time Step (dt)</strong></td>
+  </tr>
+  <tr>
+    <td><img src="results/1d_error_vs_dx.png" width="400"></td>
+    <td><img src="results/1d_error_vs_dt.png" width="400"></td>
+  </tr>
+  <tr>
+    <td align="center"><em>Evolution of the L2 error for different `dx` values, showing improved accuracy with finer grids.</em></td>
+    <td align="center"><em>Evolution of the L2 error for different `dt` values, confirming the stability of the scheme.</em></td>
+  </tr>
+</table>
 
 ---
 
