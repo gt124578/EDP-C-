@@ -107,6 +107,7 @@ The repository follows this structure:
 │   ├── solver.hpp
 │   ├── solver2D.hpp
 │   └── source_term.hpp
+boundary
 ├── src/
 │   ├── boundary.cpp
 │   ├── main.cpp
@@ -114,6 +115,7 @@ The repository follows this structure:
 │   ├── Mesh2D.cpp
 │   ├── solver.cpp
 │   └── solver2D.cpp
+source_term.cpp
 └── results/
     ├── figure2_solution_1d.png
     ├── figure3_evolution_1d.png
